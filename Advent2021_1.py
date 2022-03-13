@@ -1,8 +1,10 @@
 def main():
-    data = load_data('input1.txt')
+    data = load_data('Files/input1.txt')
+
     r_1 = count_increased(data)
-    r_2 = count_increased_in_groups_of_three(data)
     print(r_1)
+
+    r_2 = count_increased_in_groups_of_three(data)
     print(r_2)
 
 def load_data(file):
