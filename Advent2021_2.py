@@ -17,17 +17,20 @@ def load_data(file):
     return input_list_strings
 
 def tic_tac(func):
+
     import time
     def inner(*args, **kwargs):
         start_time = time.time()
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         end_time = time.time()
         exec_time = end_time - start_time
         print(f'Execution took: {exec_time}')
+        return result
     return inner
 
 @tic_tac
 def part1(data1):
+
     right = sum_movement('forward', data1)
     up = sum_movement('up', data1)
     down = sum_movement('down', data1)
@@ -36,6 +39,7 @@ def part1(data1):
 
 @tic_tac
 def part2(data2):
+
     aim = 0
     right = 0
     depth = 0
