@@ -28,9 +28,7 @@ def main():
     for i in range(9):
         data_counted_sorted[str(i)] = data_counted.get(str(i), 0)
 
-    print(data_counted_sorted)
     results = cycle(data_counted_sorted, 256)
-    print(results)
     print(sum([x for x in results.values()]))
 
 if __name__ == "__main__":
