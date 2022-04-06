@@ -25,15 +25,8 @@ def main():
     median = st.median(data)
     std = st.stdev(data)
 
-    result1, result2 = [[float('inf'), float('inf')]] * 2
-
-    for number in range(round(median - std/2), round(median + std/2)):
-
-        if (suspect1 := count_total_distance_equal_cost(number, data)) < result1[0]:
-            result1 = suspect1, number
-
-        if (suspect2 := count_total_distance_appending_cost(number, data, by=1)) < result2[0]:
-            result2 = suspect2, number
+    result1 = min([(count_total_distance_equal_cost(number, data), number) for number in range(round(median - std/2), round(median + std/2))])
+    result2 = min([(count_total_distance_appending_cost(number, data), number) for number in range(round(median - std/2), round(median + std/2))])
 
     print(f'Result1: {result1} \nResult2: {result2}')
 
