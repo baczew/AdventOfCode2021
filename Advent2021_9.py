@@ -11,6 +11,8 @@ def load_data(file):
 
     return input_numpy_array
 
+
+
 def get_adjacent_values(matrix, initial_row, initial_column):
 
     directions = [(-1, 0), (1, 0), (0, 1), (0, -1)]
@@ -33,6 +35,8 @@ def get_adjacent_values(matrix, initial_row, initial_column):
 
     return values, positions
 
+
+
 def control_arg(func):
 
     prev_call = []
@@ -51,6 +55,7 @@ def control_arg(func):
     return inner_function
 
 
+
 @control_arg
 def filter_bigger_adjacent_values_and_count(matrix, initial_row, initial_column):
 
@@ -63,9 +68,11 @@ def filter_bigger_adjacent_values_and_count(matrix, initial_row, initial_column)
     return 1 + sum([filter_bigger_adjacent_values_and_count(matrix, *point[1]) for point in filtered])
 
 
+
 def get_prod_of_n_from_the_heap(n:int, heap:heapq):
 
     return abs(np.prod([heapq.heappop(heap) for _ in range(n)]))
+
 
 
 def task1():
@@ -81,6 +88,7 @@ def task1():
                                              else np.nan
 
     return data, low_points_matrix
+
 
 
 def task2():
@@ -100,12 +108,15 @@ def task2():
     return get_prod_of_n_from_the_heap(3, group)
 
 
+
 def main():
     result1 = task1()
     print(f'Result of task 1: {np.nansum(result1):.0f}')
 
     result2 = task2()
     print(f'Result of task 2: {result2:.0f}')
+
+
 
 if __name__ == "__main__":
     main()
