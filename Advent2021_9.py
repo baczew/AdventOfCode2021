@@ -1,6 +1,8 @@
 import numpy as np
 import heapq
 
+
+
 def load_data(file):
 
     with open(file) as op:
