@@ -5,7 +5,7 @@ import collections
 def main():
 
     # Read data
-    data, folds = load_data('/Users/Mateusz/Documents/Programowanie/Advent of Code/input13.txt')
+    data, folds = load_data('Files/input13.txt')
    
     # Create a board
     game_board = Board()
